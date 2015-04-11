@@ -18,7 +18,7 @@ function CreateCustomer()
         if (objRequest.readyState ==4 && objRequest.status==200)
         {
             var result=JSON.parse(objRequest.responseText);
-            OperationResult(result);
+            OperationResult1(result);
         }
     }
     
@@ -29,7 +29,7 @@ function CreateCustomer()
 }
 
 //Show in result1 area if the function was successful or not successful
-function OperationResult(output)
+function OperationResult1(output)
 {
     if (output.WasSuccessful== 1)
     {
@@ -49,7 +49,7 @@ function MenuChoice()
         document.getElementById("area2").style.visibility = "hidden";
         document.getElementById("area3").style.visibility = "hidden";
     }
-    else if (document.getElementById("menu").value =="Update Shipping Info")
+    else if(document.getElementById("menu").value == "Update Shipping Info")
     {
         document.getElementById("area1").style.visibility = "hidden";
         document.getElementById("area2").style.visibility = "visible";
@@ -66,7 +66,7 @@ function MenuChoice()
 function updateOrderAddress()
 {
     var objRequest=new XMLHttpRequest();
-    var url="http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/updateOrderAddress";
+    var url="http://bus-pluto.ad.uab.edu/jsonwebservice/service1.svc/CreateCustomer";
     
     //Collect New updated shipping info from section 2 of webpage
     var ordernumber=document.getElementById("ordnumber").value;
